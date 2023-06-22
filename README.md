@@ -35,6 +35,7 @@
 
 - Language  : Java 11 (OpenJDK 11.0.15.9-1)
 - Front : Bootstrap(2.7.12)
+- 형상 관리 : Github
 
 [//]: # (여기는 참고용)
 - Language  : Java (OpenJDK 8)
