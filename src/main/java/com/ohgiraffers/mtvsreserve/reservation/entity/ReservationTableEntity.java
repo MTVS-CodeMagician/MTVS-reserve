@@ -19,7 +19,7 @@ public class ReservationTableEntity {
     private Long id;
 
     // 예약 한 사람 loginId
-    @Column(unique = true)
+    @Column
     private  String userId;
 
     // 예약 룸
