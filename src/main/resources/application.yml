@@ -1,18 +1,21 @@
-#server:
-#  port: 8080
-#
-#spring:
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://localhost:3306/db_reserve?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-#    username: jin
-#    password: 4719
-#  thymeleaf:
-#    cache: false
-#
-#  jpa:
-#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-#    open-in-view: false
-#    show-sql: true
-#    hibernate:
-#      ddl-auto: update
+server:
+  port: 8080
+
+# jinwoo Database와 게시판 연결
+# user사용자 / UserPassword 사용자 비밀번호
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/example?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: user
+    password: UserPassword
+  thymeleaf:
+    cache: false
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
