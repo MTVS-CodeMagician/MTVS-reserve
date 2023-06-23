@@ -19,7 +19,7 @@ public class TableInfoDTO {
     private int timeNum;
     private String userId;
 
-    public static TableInfoDTO toMemberDTO(ReservationTableEntity reservationTableEntity){
+    public static TableInfoDTO toTableInfoDTO(ReservationTableEntity reservationTableEntity){
         TableInfoDTO tableInfoDTO=new TableInfoDTO();
         tableInfoDTO.setId(reservationTableEntity.getId());
         tableInfoDTO.setDate(reservationTableEntity.getDate());

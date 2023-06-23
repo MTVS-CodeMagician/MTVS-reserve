@@ -1,7 +1,7 @@
 package com.ohgiraffers.mtvsreserve.reservation.controller;
 
 import com.ohgiraffers.mtvsreserve.reservation.dto.TableInfoDTO;
-import com.ohgiraffers.mtvsreserve.reservation.dto.ViewTableDTO;
+import com.ohgiraffers.mtvsreserve.reservation.repository.ReservationTableRepository;
 import com.ohgiraffers.mtvsreserve.reservation.service.ReservationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -34,5 +34,13 @@ public class ReserveController {
         System.out.println("tableInfoDTO = " + tableInfoDTO);
         reservationService.save(tableInfoDTO);
         return "reservation/viewreserve";
+    }
+
+    @GetMapping("/reservCheck")
+    public String checkReservation(Model model){
+        List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation("123");
+        model.addAttribute("infos",tableInfoDTO);
+
+        return "reservation/checkReservation";
     }
 }
