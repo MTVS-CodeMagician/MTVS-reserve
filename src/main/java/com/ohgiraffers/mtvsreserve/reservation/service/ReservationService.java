@@ -1,7 +1,6 @@
 package com.ohgiraffers.mtvsreserve.reservation.service;
 
 import com.ohgiraffers.mtvsreserve.reservation.dto.TableInfoDTO;
-import com.ohgiraffers.mtvsreserve.reservation.dto.ViewTableDTO;
 import com.ohgiraffers.mtvsreserve.reservation.entity.ReservationTableEntity;
 import com.ohgiraffers.mtvsreserve.reservation.repository.ReservationTableRepository;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -39,10 +39,26 @@ public class ReservationService {
         int j = 0;
         for (ReservationTableEntity reservationTableEntity : reservationTableEntityList) {
             if (reservationTableEntityList.get(j).getDate().equals(final_date)) {
-                tableInfoDTOList.add(TableInfoDTO.toMemberDTO(reservationTableEntity));
+                tableInfoDTOList.add(TableInfoDTO.toTableInfoDTO(reservationTableEntity));
             }
             j++;
         }
         return tableInfoDTOList;
+    }
+
+    public List<TableInfoDTO> viewAllReservation(String userId) {
+        List<Optional<ReservationTableEntity>> reservationTableEntities = reservationTableRepository.findAllByuserId(userId);
+        List<TableInfoDTO> tableInfoDTOS=new ArrayList<>();
+
+        for (Optional<ReservationTableEntity> t: reservationTableEntities){
+            tableInfoDTOS.add(TableInfoDTO.toTableInfoDTO(t.get()));
+        }
+
+        if(tableInfoDTOS.isEmpty()){
+            return null;
+        }else{
+            return tableInfoDTOS;
+        }
+
     }
 }
