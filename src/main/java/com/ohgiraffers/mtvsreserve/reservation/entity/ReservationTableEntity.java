@@ -37,6 +37,15 @@ public class ReservationTableEntity {
     public static ReservationTableEntity toReservationTableEntity(TableInfoDTO tableInfoDTO) {
         ReservationTableEntity reservationTableEntity = new ReservationTableEntity();
         // Dto를 entity로 변환하는 과정임
+        reservationTableEntity.setDate(tableInfoDTO.getDate());
+        reservationTableEntity.setRoomNum(tableInfoDTO.getRoomNum());
+        reservationTableEntity.setTimeNum(tableInfoDTO.getTimeNum());
+        reservationTableEntity.setUserId(tableInfoDTO.getUserId());
+        return reservationTableEntity;
+    }
+    public static ReservationTableEntity toUpdateReservationTableEntity(TableInfoDTO tableInfoDTO) {
+        ReservationTableEntity reservationTableEntity = new ReservationTableEntity();
+        // Dto를 entity로 변환하는 과정임
         reservationTableEntity.setId(tableInfoDTO.getId());
         reservationTableEntity.setDate(tableInfoDTO.getDate());
         reservationTableEntity.setRoomNum(tableInfoDTO.getRoomNum());

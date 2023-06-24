@@ -1,6 +1,7 @@
 package com.ohgiraffers.mtvsreserve.reservation.controller;
 
 import com.ohgiraffers.mtvsreserve.reservation.dto.TableInfoDTO;
+import com.ohgiraffers.mtvsreserve.reservation.dto.TimeListDTO;
 import com.ohgiraffers.mtvsreserve.reservation.repository.ReservationTableRepository;
 import com.ohgiraffers.mtvsreserve.reservation.service.ReservationService;
 import lombok.RequiredArgsConstructor;
@@ -20,13 +21,13 @@ public class ReserveController {
         return "/reservation/doreserve";
     }
     @PostMapping("doreserve")
-    public String doReserve(@RequestParam int roomNum,@RequestParam String date,@RequestParam String userId, Model model){
+    public String doReserve(@RequestParam int roomNum, @RequestParam String date, Model model){
         model.addAttribute("roomNum",roomNum);
         model.addAttribute("date",date);
-        model.addAttribute("userId",userId);
         List<TableInfoDTO> roomlist= reservationService.findCompleteReserve(date);
         model.addAttribute("roomlist",roomlist);
-        System.out.println("roomlist = " + roomlist);
+        List<TimeListDTO> timelist =reservationService.timeList();
+        model.addAttribute("timelist",timelist);
         return "reservation/doreserve1";
     }
     @PostMapping("doreserve1")
@@ -38,7 +39,7 @@ public class ReserveController {
 
     @GetMapping("/reservCheck")
     public String checkReservation(Model model){
-        List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation("123");
+        List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation("진용민");
         model.addAttribute("infos",tableInfoDTO);
 
         return "reservation/checkReservation";
