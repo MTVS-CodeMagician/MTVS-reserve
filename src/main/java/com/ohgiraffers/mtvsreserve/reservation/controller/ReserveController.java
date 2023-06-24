@@ -28,7 +28,7 @@ public class ReserveController {
     public String doReserve(@RequestParam int roomNum, @RequestParam String date, Model model){
         model.addAttribute("roomNum",roomNum);
         model.addAttribute("date",date);
-        List<TableInfoDTO> roomlist= reservationService.findCompleteReserve(date);
+        List<TableInfoDTO> roomlist= reservationService.findCompleteReserve(date, roomNum);
         model.addAttribute("roomlist",roomlist);
         List<TimeListDTO> timelist =reservationService.timeList();
         model.addAttribute("timelist",timelist);
@@ -48,7 +48,7 @@ public class ReserveController {
 
     @GetMapping("/reservCheck")
     public String checkReservation(Model model){
-        List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation("123");
+        List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation("진용민");
         model.addAttribute("infos",tableInfoDTO);
         return "reservation/checkReservation";
     }
