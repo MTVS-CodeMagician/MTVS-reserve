@@ -1,6 +1,7 @@
 package com.ohgiraffers.mtvsreserve.reservation.service;
 
 import com.ohgiraffers.mtvsreserve.reservation.dto.TableInfoDTO;
+import com.ohgiraffers.mtvsreserve.reservation.dto.TimeListDTO;
 import com.ohgiraffers.mtvsreserve.reservation.entity.ReservationTableEntity;
 import com.ohgiraffers.mtvsreserve.reservation.repository.ReservationTableRepository;
 import lombok.RequiredArgsConstructor;
@@ -26,13 +27,11 @@ public class ReservationService {
         tableInfoDTO.setDate(final_date);
         ReservationTableEntity reservationTableEntity = ReservationTableEntity.toReservationTableEntity(tableInfoDTO);
         reservationTableRepository.save(reservationTableEntity);
-        //repository save메서드 호출(조건 . entity객체를 넘겨줘야 함)
     }
 
     public List<TableInfoDTO> findCompleteReserve(String date) {
         String[] dates = date.split("-");
         String final_date = dates[0] + dates[1] + dates[2];
-
 
         List<ReservationTableEntity> reservationTableEntityList = reservationTableRepository.findAll();
         List<TableInfoDTO> tableInfoDTOList = new ArrayList<>();
@@ -45,7 +44,6 @@ public class ReservationService {
         }
         return tableInfoDTOList;
     }
-
     public List<TableInfoDTO> viewAllReservation(String userId) {
         List<Optional<ReservationTableEntity>> reservationTableEntities = reservationTableRepository.findAllByuserId(userId);
         List<TableInfoDTO> tableInfoDTOS=new ArrayList<>();
@@ -60,5 +58,13 @@ public class ReservationService {
             return tableInfoDTOS;
         }
 
+    }
+    public List<TimeListDTO> timeList(){
+        List<TimeListDTO> times=new ArrayList<>();
+        String[] list=new String[]{"06~08","08~10","10~12","12~14","14~16","16~18","18~20","20~22","22~24"};
+        for (int i=0; i<9; i++){
+            times.add(new TimeListDTO(i+1,list[i]));
+        }
+        return times;
     }
 }

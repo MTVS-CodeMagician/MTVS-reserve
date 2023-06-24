@@ -9,8 +9,7 @@
     <h3 th:text="|선택한 룸은 ${roomNum}|"></h3>
 
     <form action="doreserve" method="post">
-       <input type="text" th:value="${roomNum}"} name="roomNum" hidden="hidden"> <br>
-       <input type="text"  name="userId" > <br>
+       <input type="text" th:value="${roomNum}" name="roomNum" hidden="hidden"> <br>
         날짜 : <label>
             <input type="date" name="date"
                 min="2023-05-01"
