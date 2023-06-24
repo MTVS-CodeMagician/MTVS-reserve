@@ -7,6 +7,7 @@ import com.ohgiraffers.mtvsreserve.reservation.repository.ReservationTableReposi
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -67,4 +68,20 @@ public class ReservationService {
         }
         return times;
     }
+
+    @Transactional
+    public void deleteByuserIdAndId(String userId,Long id){
+        reservationTableRepository.deleteByuserIdAndId(userId,id);
+    }
+    /*
+    의문점 2개
+    1. Transactional을 사용하는 이유
+    2. 위의 method는 정상적으로 작동하지 않음
+     */
+
+    @Transactional
+    public void deleteById(Long id){
+        reservationTableRepository.deleteById(id);
+    }
+
 }

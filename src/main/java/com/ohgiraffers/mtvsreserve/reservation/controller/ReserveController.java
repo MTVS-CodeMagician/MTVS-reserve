@@ -39,9 +39,15 @@ public class ReserveController {
 
     @GetMapping("/reservCheck")
     public String checkReservation(Model model){
-        List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation("진용민");
+        List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation("123");
         model.addAttribute("infos",tableInfoDTO);
 
         return "reservation/checkReservation";
+    }
+
+    @GetMapping("deletereservationinfo/{id}")
+    public String deleteReservationInfo(@PathVariable Long id){
+        reservationService.deleteById(id);
+        return "redirect:/reservCheck";
     }
 }
