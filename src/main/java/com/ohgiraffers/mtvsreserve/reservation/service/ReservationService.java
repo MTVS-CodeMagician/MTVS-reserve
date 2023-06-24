@@ -7,12 +7,14 @@ import com.ohgiraffers.mtvsreserve.reservation.repository.ReservationTableReposi
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -93,6 +95,7 @@ public class ReservationService {
         }
         return times;
     }
+
     public void alert(String notice, HttpServletResponse response) throws IOException {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
@@ -101,5 +104,21 @@ public class ReservationService {
         out.println("</script>");
         out.flush();
         return;
+    }
+
+  
+    @Transactional
+    public void deleteByuserIdAndId(String userId,Long id){
+        reservationTableRepository.deleteByuserIdAndId(userId,id);
+    }
+    /*
+    의문점 2개
+    1. Transactional을 사용하는 이유
+    2. 위의 method는 정상적으로 작동하지 않음
+     */
+
+    @Transactional
+    public void deleteById(Long id){
+        reservationTableRepository.deleteById(id);
     }
 }
