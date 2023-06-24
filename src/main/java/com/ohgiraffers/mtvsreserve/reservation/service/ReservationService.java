@@ -7,6 +7,9 @@ import com.ohgiraffers.mtvsreserve.reservation.repository.ReservationTableReposi
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +19,7 @@ import java.util.Optional;
 public class ReservationService {
     private final ReservationTableRepository reservationTableRepository;
 
-    public void save(TableInfoDTO tableInfoDTO) {
+    public int save(TableInfoDTO tableInfoDTO) {
         /*
         1.DTO->entity변환
         2.repository의 save method 호출
@@ -25,8 +28,23 @@ public class ReservationService {
         String[] dates = date.split("-");
         String final_date = dates[0] + dates[1] + dates[2];
         tableInfoDTO.setDate(final_date);
-        ReservationTableEntity reservationTableEntity = ReservationTableEntity.toReservationTableEntity(tableInfoDTO);
-        reservationTableRepository.save(reservationTableEntity);
+        List<TableInfoDTO> check2times=findReserve();
+        int count=0;
+        for (int i=0; i<check2times.size(); i++){
+            System.out.println(check2times.get(i).getUserId());
+        }
+        for (int i=0; i<check2times.size(); i++){
+            if(tableInfoDTO.getUserId().equals(check2times.get(i).getUserId())){
+                count++;
+            }
+        }
+        if(count<2) {
+            ReservationTableEntity reservationTableEntity = ReservationTableEntity.toReservationTableEntity(tableInfoDTO);
+            reservationTableRepository.save(reservationTableEntity);
+            return count;
+        }else{
+            return count;
+        }
     }
 
     public List<TableInfoDTO> findCompleteReserve(String date) {
@@ -41,6 +59,14 @@ public class ReservationService {
                 tableInfoDTOList.add(TableInfoDTO.toTableInfoDTO(reservationTableEntity));
             }
             j++;
+        }
+        return tableInfoDTOList;
+    }
+    public List<TableInfoDTO> findReserve() {
+        List<ReservationTableEntity> reservationTableEntityList = reservationTableRepository.findAll();
+        List<TableInfoDTO> tableInfoDTOList = new ArrayList<>();
+        for (ReservationTableEntity reservationTableEntity : reservationTableEntityList) {
+                tableInfoDTOList.add(TableInfoDTO.toTableInfoDTO(reservationTableEntity));
         }
         return tableInfoDTOList;
     }
@@ -66,5 +92,14 @@ public class ReservationService {
             times.add(new TimeListDTO(i+1,list[i]));
         }
         return times;
+    }
+    public void alert(String notice, HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println("<script type='text/javascript'>");
+        out.println("alert('"+notice+"');");
+        out.println("</script>");
+        out.flush();
+        return;
     }
 }
