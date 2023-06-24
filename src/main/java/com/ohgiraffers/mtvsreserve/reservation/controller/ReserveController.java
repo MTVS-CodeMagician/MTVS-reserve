@@ -9,6 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -31,9 +35,14 @@ public class ReserveController {
         return "reservation/doreserve1";
     }
     @PostMapping("doreserve1")
-    public String doReserve1(@ModelAttribute TableInfoDTO tableInfoDTO){
-        System.out.println("tableInfoDTO = " + tableInfoDTO);
-        reservationService.save(tableInfoDTO);
+    public String doReserve1(@ModelAttribute TableInfoDTO tableInfoDTO
+    , HttpServletRequest req, HttpServletResponse response, HttpSession session
+    ) throws IOException {
+        int count=reservationService.save(tableInfoDTO);
+        if(count >= 2){
+            String mesg=" "+tableInfoDTO.getUserId()+"님은 더 이상 예약할 수 없습니다.";
+            reservationService.alert(mesg,response);
+        }
         return "reservation/viewreserve";
     }
 
@@ -41,7 +50,6 @@ public class ReserveController {
     public String checkReservation(Model model){
         List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation("진용민");
         model.addAttribute("infos",tableInfoDTO);
-
         return "reservation/checkReservation";
     }
 }
