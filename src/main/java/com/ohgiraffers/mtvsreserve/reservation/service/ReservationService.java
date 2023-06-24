@@ -49,7 +49,7 @@ public class ReservationService {
         }
     }
 
-    public List<TableInfoDTO> findCompleteReserve(String date) {
+    public List<TableInfoDTO> findCompleteReserve(String date, int roomNum) {
         String[] dates = date.split("-");
         String final_date = dates[0] + dates[1] + dates[2];
 
@@ -57,7 +57,7 @@ public class ReservationService {
         List<TableInfoDTO> tableInfoDTOList = new ArrayList<>();
         int j = 0;
         for (ReservationTableEntity reservationTableEntity : reservationTableEntityList) {
-            if (reservationTableEntityList.get(j).getDate().equals(final_date)) {
+            if (reservationTableEntityList.get(j).getDate().equals(final_date)&&(reservationTableEntityList.get(j).getRoomNum().equals(roomNum))){
                 tableInfoDTOList.add(TableInfoDTO.toTableInfoDTO(reservationTableEntity));
             }
             j++;
