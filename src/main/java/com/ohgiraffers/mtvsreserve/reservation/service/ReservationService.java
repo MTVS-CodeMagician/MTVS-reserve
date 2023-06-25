@@ -55,9 +55,10 @@ public class ReservationService {
 
         List<ReservationTableEntity> reservationTableEntityList = reservationTableRepository.findAll();
         List<TableInfoDTO> tableInfoDTOList = new ArrayList<>();
+        String roomN=String.valueOf(roomNum);
         int j = 0;
         for (ReservationTableEntity reservationTableEntity : reservationTableEntityList) {
-            if (reservationTableEntityList.get(j).getDate().equals(final_date)&&(reservationTableEntityList.get(j).getRoomNum().equals(roomNum))){
+            if (reservationTableEntityList.get(j).getDate().equals(final_date)&&(reservationTableEntityList.get(j).getRoomNum().equals(roomN))){
                 tableInfoDTOList.add(TableInfoDTO.toTableInfoDTO(reservationTableEntity));
             }
             j++;
@@ -68,7 +69,7 @@ public class ReservationService {
         List<ReservationTableEntity> reservationTableEntityList = reservationTableRepository.findAll();
         List<TableInfoDTO> tableInfoDTOList = new ArrayList<>();
         for (ReservationTableEntity reservationTableEntity : reservationTableEntityList) {
-                tableInfoDTOList.add(TableInfoDTO.toTableInfoDTO(reservationTableEntity));
+            tableInfoDTOList.add(TableInfoDTO.toTableInfoDTO(reservationTableEntity));
         }
         return tableInfoDTOList;
     }
@@ -106,7 +107,7 @@ public class ReservationService {
         return;
     }
 
-  
+
     @Transactional
     public void deleteByuserIdAndId(String userId,Long id){
         reservationTableRepository.deleteByuserIdAndId(userId,id);
