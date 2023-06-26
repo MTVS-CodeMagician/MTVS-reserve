@@ -2,13 +2,16 @@ package com.ohgiraffers.mtvsreserve;
 
 import com.ohgiraffers.mtvsreserve.members.login.application.dto.MemberDTO;
 import com.ohgiraffers.mtvsreserve.members.login.common.argumentresolver.Login;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Slf4j
 @Controller
+@RequiredArgsConstructor
 public class HomeController {
 
     @GetMapping("/")
