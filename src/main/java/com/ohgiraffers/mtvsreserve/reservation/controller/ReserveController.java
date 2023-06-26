@@ -21,6 +21,8 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
+import static com.ohgiraffers.mtvsreserve.members.login.common.session.SessionConst.LOGIN_MEMBER;
+
 @Controller
 @RequiredArgsConstructor
 public class ReserveController {
@@ -48,6 +50,10 @@ public class ReserveController {
     public String doReserve1(@ModelAttribute TableInfoDTO tableInfoDTO
             , HttpServletRequest req, HttpServletResponse response, HttpSession session
     ) throws IOException {
+
+        MemberDTO memberDTO = (MemberDTO) session.getAttribute(LOGIN_MEMBER);
+        tableInfoDTO.setUserId(memberDTO.getName());
+
         int count=reservationService.save(tableInfoDTO);
         if(count >= 2){
             String mesg=" "+tableInfoDTO.getUserId()+"님은 더 이상 예약할 수 없습니다.";
