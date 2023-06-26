@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreserve.members.login.application.controller;
+package com.ohgiraffers.mtvsreserve;
 
 import com.ohgiraffers.mtvsreserve.members.login.application.dto.MemberDTO;
 import com.ohgiraffers.mtvsreserve.members.login.common.argumentresolver.Login;
@@ -16,11 +16,16 @@ public class HomeController {
 
         //세션에 회원 데이터가 없으면 home
         if (loginMember == null) {
-            return "home";
+            return "main";
         }
 
         //세션이 유지되면 로그인으로 이동
         model.addAttribute("member", loginMember);
-        return "loginHome";
+        return "loginMain";
+    }
+
+    @GetMapping("/reservation")
+    public String reserve(){
+        return "reservation/viewreserve";
     }
 }

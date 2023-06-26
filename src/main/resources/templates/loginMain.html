@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD:src/main/resources/templates/main.html
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,10 +34,14 @@
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    <button type="button" class="btn btn-outline-primary">로그인</button>
-                    <button type="button" class="btn btn-outline-primary">회원가입</button>
-
-
+                    <h4 class="mb-3" th:text="|로그인: ${member.name}|">로그인 사용자 이름</h4>
+                    <hr class="my-4">
+                    <form th:action="@{/logout}" method="post">
+                <button class="btn btn-outline-primary" type="submit"
+                        onclick="location.href='home.html'">
+                    로그아웃
+                </button>
+            </form>
                 </span>
             </div>
         </div>
@@ -111,12 +114,6 @@
     </div>
 </div>
 
-=======
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
->>>>>>> feature/ExceptionError:src/main/resources/templates/myPage.html
 
 </body>
 </html>
