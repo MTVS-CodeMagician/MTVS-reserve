@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -33,7 +36,6 @@ public class ReservationService {
         List<TableInfoDTO> check2times=findReserve();
         int count=0;
         for (int i=0; i<check2times.size(); i++){
-            System.out.println(check2times.get(i).getUserId());
         }
         for (int i=0; i<check2times.size(); i++){
             if(tableInfoDTO.getUserId().equals(check2times.get(i).getUserId())){
@@ -121,5 +123,30 @@ public class ReservationService {
     @Transactional
     public void deleteById(Long id){
         reservationTableRepository.deleteById(id);
+    }
+
+    public String CurrentDay(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar c1 = Calendar.getInstance();
+        String strToday = sdf.format(c1.getTime());
+        return  strToday;
+    }
+    public String maxDay(){
+        String today=CurrentDay();
+        LocalDate currentDate=LocalDate.parse(today);
+        LocalDate futureDate=currentDate.plusDays(7);
+        String futureDateStr=futureDate.toString();
+        return futureDateStr;
+    }
+
+    @Transactional
+    public void deleteBeforeDate() {
+        String current=CurrentDay();
+        LocalDate currentDate=LocalDate.parse(current);
+        LocalDate beforeDate=currentDate.minusDays(1);
+        String beforeDateStr=beforeDate.toString();
+        String[] dates = beforeDateStr.split("-");
+        String finalDeleteDate = dates[0] + dates[1] + dates[2];
+        reservationTableRepository.deleteByDate(finalDeleteDate);
     }
 }
