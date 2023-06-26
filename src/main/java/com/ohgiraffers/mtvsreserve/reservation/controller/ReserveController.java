@@ -32,6 +32,11 @@ public class ReserveController {
     @GetMapping("doreserve")
     public String doReservePage(@RequestParam int roomNum ,Model model){
         model.addAttribute("roomNum",roomNum);
+        String date=reservationService.CurrentDay();
+        model.addAttribute("today",date);
+        String fdate=reservationService.maxDay();
+        model.addAttribute("maxdate",fdate);
+        reservationService.deleteBeforeDate();
         return "/reservation/doreserve";
     }
     @PostMapping("doreserve")
