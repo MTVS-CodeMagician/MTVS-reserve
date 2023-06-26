@@ -1,7 +1,7 @@
-package com.ohgiraffers.mtvsreserve.members.login.web;
+package com.ohgiraffers.mtvsreserve.members.login.application.controller;
 
-import com.ohgiraffers.mtvsreserve.members.login.domain.member.MemberDTO;
-import com.ohgiraffers.mtvsreserve.members.login.web.argumentresolver.Login;
+import com.ohgiraffers.mtvsreserve.members.login.application.dto.MemberDTO;
+import com.ohgiraffers.mtvsreserve.members.login.common.argumentresolver.Login;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,7 +1,7 @@
-package com.ohgiraffers.mtvsreserve.members.login.web.argumentresolver;
+package com.ohgiraffers.mtvsreserve.members.login.common.argumentresolver;
 
-import com.ohgiraffers.mtvsreserve.members.login.domain.member.MemberDTO;
-import com.ohgiraffers.mtvsreserve.members.login.web.SessionConst;
+import com.ohgiraffers.mtvsreserve.members.login.application.dto.MemberDTO;
+import com.ohgiraffers.mtvsreserve.members.login.common.session.SessionConst;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;

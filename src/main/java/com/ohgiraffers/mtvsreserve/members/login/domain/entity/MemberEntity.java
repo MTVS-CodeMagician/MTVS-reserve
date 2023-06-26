@@ -1,6 +1,6 @@
 package com.ohgiraffers.mtvsreserve.members.login.domain.entity;
 
-import com.ohgiraffers.mtvsreserve.members.login.domain.member.MemberDTO;
+import com.ohgiraffers.mtvsreserve.members.login.application.dto.MemberDTO;
 import lombok.*;
 
 import javax.persistence.*;

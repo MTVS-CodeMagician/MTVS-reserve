@@ -1,6 +1,6 @@
-package com.ohgiraffers.mtvsreserve.members.login.web.interceptor;
+package com.ohgiraffers.mtvsreserve.members.login.common.interceptor;
 
-import com.ohgiraffers.mtvsreserve.members.login.web.SessionConst;
+import com.ohgiraffers.mtvsreserve.members.login.common.session.SessionConst;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 

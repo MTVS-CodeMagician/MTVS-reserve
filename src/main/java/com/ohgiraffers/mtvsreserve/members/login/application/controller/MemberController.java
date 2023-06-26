@@ -1,7 +1,7 @@
-package com.ohgiraffers.mtvsreserve.members.login.web.member;
+package com.ohgiraffers.mtvsreserve.members.login.application.controller;
 
-import com.ohgiraffers.mtvsreserve.members.login.domain.member.MemberDTO;
-import com.ohgiraffers.mtvsreserve.members.login.domain.member.MemberService;
+import com.ohgiraffers.mtvsreserve.members.login.application.dto.MemberDTO;
+import com.ohgiraffers.mtvsreserve.members.login.domain.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

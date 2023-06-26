@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreserve.members.login.web.argumentresolver;
+package com.ohgiraffers.mtvsreserve.members.login.common.argumentresolver;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

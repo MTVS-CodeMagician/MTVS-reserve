@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreserve.members.login.domain.member;
+package com.ohgiraffers.mtvsreserve.members.login.domain.repository;
 
 import com.ohgiraffers.mtvsreserve.members.login.domain.entity.MemberEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,8 +1,8 @@
-package com.ohgiraffers.mtvsreserve.members.login.domain.member;
+package com.ohgiraffers.mtvsreserve.members.login.domain.service;
 
-import com.ohgiraffers.mtvsreserve.members.login.domain.member.MemberDTO;
+import com.ohgiraffers.mtvsreserve.members.login.application.dto.MemberDTO;
 import com.ohgiraffers.mtvsreserve.members.login.domain.entity.MemberEntity;
-import com.ohgiraffers.mtvsreserve.members.login.domain.member.MemberRepository;
+import com.ohgiraffers.mtvsreserve.members.login.domain.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 import static com.ohgiraffers.mtvsreserve.members.login.domain.entity.MemberEntity.toMemberEntity;
 import static com.ohgiraffers.mtvsreserve.members.login.domain.entity.MemberEntity.toUpdateMemberEntity;
-import static com.ohgiraffers.mtvsreserve.members.login.domain.member.MemberDTO.toMemberDTO;
+import static com.ohgiraffers.mtvsreserve.members.login.application.dto.MemberDTO.toMemberDTO;
 
 @Service
 @RequiredArgsConstructor

@@ -1,8 +1,8 @@
-package com.ohgiraffers.mtvsreserve;
+package com.ohgiraffers.mtvsreserve.members;
 
-import com.ohgiraffers.mtvsreserve.members.login.web.argumentresolver.LoginMemberArgumentResolver;
-import com.ohgiraffers.mtvsreserve.members.login.web.interceptor.LogInterceptor;
-import com.ohgiraffers.mtvsreserve.members.login.web.interceptor.LoginCheckInterceptor;
+import com.ohgiraffers.mtvsreserve.members.login.common.argumentresolver.LoginMemberArgumentResolver;
+import com.ohgiraffers.mtvsreserve.members.login.common.interceptor.LogInterceptor;
+import com.ohgiraffers.mtvsreserve.members.login.common.interceptor.LoginCheckInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -28,7 +28,7 @@ public class WebConfig implements WebMvcConfigurer {
 
         registry.addInterceptor(new LoginCheckInterceptor())
                 .order(2)
-                .addPathPatterns("/**")
+                .addPathPatterns("/resources/**")
                 .excludePathPatterns("/", "/members/add", "/login", "/logout",
                         "/css/**", "/*.ico", "/error");
     }

@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreserve.members.login.web.session;
+package com.ohgiraffers.mtvsreserve.members.login.common.session;
 
 import org.springframework.stereotype.Component;
 

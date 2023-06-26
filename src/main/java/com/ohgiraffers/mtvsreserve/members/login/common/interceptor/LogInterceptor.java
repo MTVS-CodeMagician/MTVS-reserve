@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreserve.members.login.web.interceptor;
+package com.ohgiraffers.mtvsreserve.members.login.common.interceptor;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.method.HandlerMethod;
@@ -41,7 +41,7 @@ public class LogInterceptor implements HandlerInterceptor {
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         String requestURI = request.getRequestURI();
         String logId = (String) request.getAttribute(LOG_ID);
-        log.info("RESPONSE [{}][{}][{}][{}]", logId, request.getDispatcherType(), requestURI, handler);
+        log.info("RESPONSE [{}][{}][{}]", logId, request.getDispatcherType(), requestURI);
         if (ex != null) {
             log.error("afterCompletion error!!", ex);
         }

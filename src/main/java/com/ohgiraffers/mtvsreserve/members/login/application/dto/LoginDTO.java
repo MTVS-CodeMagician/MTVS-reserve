@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreserve.members.login.domain.login;
+package com.ohgiraffers.mtvsreserve.members.login.application.dto;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreserve.members.login.web;
+package com.ohgiraffers.mtvsreserve.members.login.common.session;
 
 public class SessionConst {
 
