@@ -8,15 +8,18 @@
         <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
         <title>Bootstrap Example</title>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+
+        </style>
     </head>
 </head>
-<body style="background-color: #F8F9FA">
+<body style="background-image: linear-gradient(to bottom,#198754 80%,#ffffff 20%)">
 
 
 <div class="container">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="white">
+    <nav class="navbar navbar-expand-lg shadow p-3 mb-5 rounded" style="background-color: #198754; margin-top: 15px">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar w/ text</a>
+            <a style="color: white" class="navbar-brand fs-5" href="#">MTVS reserve</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -24,21 +27,21 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a style="color: white" class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a style="color: white" class="nav-link" th:href="@{/board}">게시판</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a style="color: white" class="nav-link" th:href="@{/reservation}">예약</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
-                    <button class="btn btn-outline-primary" type="button"
+                    <button class="btn btn-success" type="button"
                             th:onclick="|location.href='@{/login}'|">
                         로그인
                     </button>
-                    <button class="btn btn-outline-primary" type="button"
+                    <button class="btn btn-success" type="button"
                             th:onclick="|location.href='@{/members/add}'|">
                         회원 가입
                     </button>
@@ -63,23 +66,16 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
-                     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide"
-                     preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#777"></rect>
-                    <text x="50%" y="50%" fill="#555" dy=".3em">First slide</text>
-                </svg>
+                <img style="border-radius: 30px" class="d-block w-100" src="img/metaverse.png" alt="" width="800"
+                     height="400">
             </div>
             <div class="carousel-item active">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
-                     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide"
-                     preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#666"></rect>
-                    <text x="50%" y="50%" fill="#444" dy=".3em">Second slide</text>
-                </svg>
+                <img style="border-radius: 30px" class="d-block w-100" src="img/metaverse2.png" alt="" width="800"
+                     height="400">
             </div>
             <div class="carousel-item">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400"
+                <svg style="border-radius: 30px" class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+                     width="800" height="400"
                      xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide"
                      preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
                     <rect width="100%" height="100%" fill="#555"></rect>
@@ -101,16 +97,35 @@
 </div>
 
 <!--슬라이더 끝-->
-<div class="container">
+<div style="margin-top: 40px" class="container">
     <div class="row">
         <div class="col">
-            <button onclick="location.href='/reservation'">예약 페이지 이동</button>
+            <div class="card text-bg-success shadow-lg w-100 p-3 mb-5 rounded ">
+                <div class="card-header">
+                    <button class="btn btn-success" onclick="location.href='/board'">게시판 페이지 이동</button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Success card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
         </div>
         <div class="col">
-            <button onclick="location.href='/board'">게시판 페이지 이동</button>
+
+            <div class="card text-bg-success w-100 p-3 mb-5 rounded shadow-lg">
+                <div class="card-header">
+                    <button class="btn btn-success" onclick="location.href='/reservation'">예약 페이지 이동</button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Success card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
         </div>
 
-        <button onclick="location.href='/reservCheck'">예약 조회 페이지 이동</button>
+        <button class="btn btn-success" onclick="location.href='/reservCheck'">예약 조회 페이지 이동</button>
     </div>
 </div>
 
