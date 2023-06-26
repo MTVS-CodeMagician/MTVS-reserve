@@ -6,15 +6,15 @@
     <script></script>
 </head>
 <body>
-    <h1 align="center">시간을 선택하세요!!!</h1>
-    <h3 align="center" th:text="|현재 예약 Study Room은  ${roomNum}번 입니다.|"
-        style="font-size: 40px"></h3>
-    <hr style="border: solid 3.5px #3dba39;">
-    <h3 align="center" th:text="|Day : ${date}|"
-        style="font-size: 30px"></h3>
-    <hr style="border: solid 3.5px #3dba39;">
-        <div align="center"
-        style= " background-color: #a6baa3;
+<h1 align="center">시간을 선택하세요!!!</h1>
+<h3 align="center" th:text="|현재 예약 Study Room은  ${roomNum}번 입니다.|"
+    style="font-size: 40px"></h3>
+<hr style="border: solid 3.5px #3dba39;">
+<h3 align="center" th:text="|Day : ${date}|"
+    style="font-size: 30px"></h3>
+<hr style="border: solid 3.5px #3dba39;">
+<div align="center"
+     style= " background-color: #a6baa3;
                  border: black;
                  border-radius: 30px;
                  height: 100%;">
@@ -38,34 +38,32 @@
                 color: black;
                 /*transform: translateY(-6px);*/
             }
-            /*.pushable:active .front {*/
-            /*    transform: translateY(-2px);*/
-            /*}*/
+
         </style>
         <th:block th:each="tlist: ${timelist}">
             <button class="myTimeButton" th:value="${tlist.getTime()}" name="timeNum">
-                  <span th:text="${tlist.getTimeString()}" class="front"></span>
-                </button>
+                <span th:text="${tlist.getTimeString()}" class="front"></span>
+            </button>
         </th:block>
         <br>
-        User 이름(삭제 해야함) : <input type="text"  name="userId"> <br>
+        <input type="text" th:value="${session.loginMember}" name="userId" hidden="hidden"> <br>
         <input type="text" th:value="${roomNum}" name="roomNum" hidden="hidden"> <br>
         <input type="text" th:value="${date}" name="date" hidden="hidden"> <br>
     </form>
-            <p align="center" >*한번 예약시 최대 이용시간은 2시간이며 2개의 예약까지 가능합니다.</p>
-    </div>
-    <script th:inline="javascript">
-        var myButtons = document.getElementsByClassName("myTimeButton");
-        var disabledTimeNums = [[${roomlist}]];
-        console.log(disabledTimeNums);
-        for (var i = 0; i < myButtons.length; i++) {
-            for (var j = 0; j < disabledTimeNums.length; j++) {
-                if(disabledTimeNums[j].timeNum-1 == i) {
-                    myButtons[i].disabled = true;
-                }
+    <p align="center" >*한번 예약시 최대 이용시간은 2시간이며 2개의 예약까지 가능합니다.</p>
+</div>
+<script th:inline="javascript">
+    var myButtons = document.getElementsByClassName("myTimeButton");
+    var disabledTimeNums = [[${roomlist}]];
+    console.log(disabledTimeNums);
+    for (var i = 0; i < myButtons.length; i++) {
+        for (var j = 0; j < disabledTimeNums.length; j++) {
+            if(disabledTimeNums[j].timeNum-1 == i) {
+                myButtons[i].disabled = true;
             }
         }
+    }
 
-    </script>
+</script>
 </body>
 </html>

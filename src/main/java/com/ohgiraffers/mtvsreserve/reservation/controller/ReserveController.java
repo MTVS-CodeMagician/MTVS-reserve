@@ -1,5 +1,9 @@
 package com.ohgiraffers.mtvsreserve.reservation.controller;
 
+import com.ohgiraffers.mtvsreserve.members.login.application.dto.LoginDTO;
+import com.ohgiraffers.mtvsreserve.members.login.application.dto.MemberDTO;
+import com.ohgiraffers.mtvsreserve.members.login.common.session.SessionConst;
+import com.ohgiraffers.mtvsreserve.members.login.domain.service.LoginService;
 import com.ohgiraffers.mtvsreserve.reservation.dto.TableInfoDTO;
 import com.ohgiraffers.mtvsreserve.reservation.dto.TimeListDTO;
 import com.ohgiraffers.mtvsreserve.reservation.repository.ReservationTableRepository;
@@ -7,11 +11,13 @@ import com.ohgiraffers.mtvsreserve.reservation.service.ReservationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
@@ -19,15 +25,19 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ReserveController {
     private final ReservationService reservationService;
+    private final LoginService loginService;
+
     @GetMapping("doreserve")
     public String doReservePage(@RequestParam int roomNum ,Model model){
         model.addAttribute("roomNum",roomNum);
         return "/reservation/doreserve";
     }
     @PostMapping("doreserve")
-    public String doReserve(@RequestParam int roomNum, @RequestParam String date, Model model){
+    public String doReserve(@RequestParam int roomNum, @RequestParam String date, Model model ){
         model.addAttribute("roomNum",roomNum);
         model.addAttribute("date",date);
+
+        // 2
         List<TableInfoDTO> roomlist= reservationService.findCompleteReserve(date, roomNum);
         model.addAttribute("roomlist",roomlist);
         List<TimeListDTO> timelist =reservationService.timeList();
@@ -36,7 +46,7 @@ public class ReserveController {
     }
     @PostMapping("doreserve1")
     public String doReserve1(@ModelAttribute TableInfoDTO tableInfoDTO
-    , HttpServletRequest req, HttpServletResponse response, HttpSession session
+            , HttpServletRequest req, HttpServletResponse response, HttpSession session
     ) throws IOException {
         int count=reservationService.save(tableInfoDTO);
         if(count >= 2){
