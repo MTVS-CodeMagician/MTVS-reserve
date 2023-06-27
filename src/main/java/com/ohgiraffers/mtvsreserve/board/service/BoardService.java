@@ -1,15 +1,14 @@
-package com.ohgiraffers.mtvsreserve.board.domain.service;
+package com.ohgiraffers.mtvsreserve.board.service;
 
 
-import com.ohgiraffers.mtvsreserve.board.domain.entity.Board;
 import com.ohgiraffers.mtvsreserve.board.domain.repository.BoardRepository;
-import com.ohgiraffers.mtvsreserve.board.domain.dto.BoardDTO;
+import com.ohgiraffers.mtvsreserve.board.domain.entity.Board;
+import com.ohgiraffers.mtvsreserve.board.dto.BoardDTO;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BoardService {
@@ -43,15 +42,10 @@ public class BoardService {
         return boardDTOList;
     }
 
-
-
-    //5단계
-
-
+    //detail 추가
     @Transactional
     public BoardDTO getPost(Long id) {
-        Optional<Board> boardWrapper = boardRepository.findById(id);
-        Board board = boardWrapper.get();
+        Board board = boardRepository.findById(id).get();
 
         BoardDTO boardDTO = BoardDTO.builder()
                 .id(board.getId())
@@ -60,18 +54,12 @@ public class BoardService {
                 .content(board.getContent())
                 .createdDate(board.getCreatedDate())
                 .build();
-
         return boardDTO;
     }
+
+    //삭제 기능
+    @Transactional
+    public void deletePost(Long id) {
+        boardRepository.deleteById(id);
+    }
 }
-
-/*
-    // 여기서부터 5단계
-    public PostResponse findPostById(final Long id) {
-        return boardRepository.findById(id);
-    }
-
-    public List<PostResponse> findAllPost() {
-        return boardRepository.findAll();
-    }
-*/

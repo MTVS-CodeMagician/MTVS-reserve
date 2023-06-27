@@ -1,12 +1,10 @@
 package com.ohgiraffers.mtvsreserve.board;
 
-import com.ohgiraffers.mtvsreserve.board.domain.dto.BoardDTO;
-import com.ohgiraffers.mtvsreserve.board.domain.service.BoardService;
+import com.ohgiraffers.mtvsreserve.board.dto.BoardDTO;
+import com.ohgiraffers.mtvsreserve.board.service.BoardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,28 +34,34 @@ public class BoardController {
         return "redirect:/board";
     }
 
-    // 여기서부터 5단계
-    @GetMapping("/post/{no}")
-    public String detail(@PathVariable("no") Long id, Model model) {
+    // detail 조회
+    @GetMapping("/post/{id}")
+    public String detail(@PathVariable("id") Long id, Model model) {
         BoardDTO boardDTO = boardService.getPost(id);
 
-        model.addAttribute("boardDTO", boardDTO);
+        model.addAttribute("post", boardDTO);
 
         return "board/detail.html";
     }
+
+    //edit 추가
+    @GetMapping("/post/edit/{id}")
+    public String edit(@PathVariable("id") Long id, Model model) {
+        BoardDTO boardDTO = boardService.getPost(id);
+        model.addAttribute("post", boardDTO);
+        return "board/edit.html";
+    }
+
+    @PutMapping("/post/edit/{id}")
+    public String update(BoardDTO boardDTO) {
+        boardService.savePost(boardDTO);
+        return "redirect:/board";
+    }
+
+    @DeleteMapping("/post/{id}")
+    public String delete(@PathVariable("id") Long id) {
+        boardService.deletePost(id);
+        return "redirect:/board";
+    }
+
 }
-
-
-//    public BoardDTO getPost(Long id){
-//        Optional<Board> boardWrapper = boardrepository.findById(id);
-//        Board board = boardWrapper.get();
-//
-//        BoardDTO boardDTO = BoardDTO.builder()
-//                .id(board.getId())
-//                .author(board.getAuthor())
-//                .title(board.getTitle())
-//                .content(board.getContent())
-//                .createdDate(board.getCreatedDate())
-//                .build();
-//
-//        return boardDTO;

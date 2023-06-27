@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreserve.board.domain.dto;
+package com.ohgiraffers.mtvsreserve.board.dto;
 
 
 import com.ohgiraffers.mtvsreserve.board.domain.entity.Board;
