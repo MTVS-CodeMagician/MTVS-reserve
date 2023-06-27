@@ -26,8 +26,10 @@
       <td th:text="${info.userId}"></td>
       <td th:text="${info.roomNum}"></td>
       <td th:text="${info.date}"></td>
-      <td th:text="${info.timeNum}"></td>
-      <td><button  type="button" class="btn btn-danger btn-sm">
+      <th:block th:each="tlist: ${timelist}" th:if="${info.timeNum==tlist.getTime()}">
+          <td th:text="${tlist.getTimeString()}"></td>
+      </th:block>
+        <td><button  type="button" class="btn btn-danger btn-sm">
         <a  th:href="@{|/deletereservationinfo/${info.id}|}">삭제</a></button>
       </td>
     </tr>

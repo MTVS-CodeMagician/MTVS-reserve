@@ -24,7 +24,7 @@ import javax.transaction.Transactional;
 public class ReservationService {
     private final ReservationTableRepository reservationTableRepository;
 
-    public int save(TableInfoDTO tableInfoDTO) {
+    public void save(TableInfoDTO tableInfoDTO,HttpServletResponse response) throws IOException {
         /*
         1.DTO->entity변환
         2.repository의 save method 호출
@@ -45,9 +45,9 @@ public class ReservationService {
         if(count<2) {
             ReservationTableEntity reservationTableEntity = ReservationTableEntity.toReservationTableEntity(tableInfoDTO);
             reservationTableRepository.save(reservationTableEntity);
-            return count;
         }else{
-            return count;
+            String mesg=" "+tableInfoDTO.getUserId()+"님은 더 이상 예약할 수 없습니다.";
+            alert(mesg,response);
         }
     }
 

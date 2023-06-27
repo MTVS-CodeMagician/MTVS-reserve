@@ -109,6 +109,7 @@
     <p align="center">* 달력에서 예약하실 날짜를 선택해주세요.</p>
     <div align="center" >
     <input  type="date" name="date"
+            th:value="${today}"
            th:min="${today}"
            th:max="${maxdate}"
     ><br>

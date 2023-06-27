@@ -52,11 +52,7 @@ public class ReserveController {
         MemberDTO memberDTO = (MemberDTO) session.getAttribute(LOGIN_MEMBER);
         tableInfoDTO.setUserId(memberDTO.getName());
 
-        int count=reservationService.save(tableInfoDTO);
-        if(count >= 2){
-            String mesg=" "+tableInfoDTO.getUserId()+"님은 더 이상 예약할 수 없습니다.";
-            reservationService.alert(mesg,response);
-        }
+        reservationService.save(tableInfoDTO,response);
         return "reservation/viewreserve";
     }
 
@@ -67,6 +63,9 @@ public class ReserveController {
 
         List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation(userName);
         model.addAttribute("infos", tableInfoDTO);
+        List<TimeListDTO> timelist =reservationService.timeList();
+
+        model.addAttribute("timelist",timelist);
 
         return "reservation/checkReservation";
     }
