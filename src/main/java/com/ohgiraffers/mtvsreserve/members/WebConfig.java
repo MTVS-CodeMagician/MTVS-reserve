@@ -23,13 +23,13 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(new LogInterceptor())
                 .order(1)
                 // ** 경로 끝까지 0개 이상의 경로(/) 일치, * 경로(/) 안에서 0개 이상의 문자 일치
-                .addPathPatterns("/resources/**") // 모든 경로패턴에 대해 인터셉터 호출
+                .addPathPatterns("/*") // 모든 경로패턴에 대해 인터셉터 호출
                 .excludePathPatterns("/css/**", "/*.ico", "/error"); // 여기 있는거 빼고
 
         registry.addInterceptor(new LoginCheckInterceptor())
                 .order(2)
-                .addPathPatterns("/resources/**", "/reservation")
+                .addPathPatterns("/*")
                 .excludePathPatterns("/", "/members/add", "/login", "/logout",
-                        "/css/**", "/*.ico", "/error", "/main");
+                        "/css/**", "/*.ico", "/error", "/main", "/board");
     }
 }
