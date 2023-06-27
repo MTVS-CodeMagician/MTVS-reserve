@@ -186,7 +186,7 @@
     <td align="center"><a href="https://github.com/hyunUChoi" target='_blank'>김태현</a></td>
     <td align="center"><a href="https://github.com/run-acorn" target='_blank'>전태현</a></td>
     <td align="center"><a href="https://github.com/3susu3" target='_blank'>정민호</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>진용민</a></td>
+    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>진용민!</a></td>
   </tr>
 
   <tr>
