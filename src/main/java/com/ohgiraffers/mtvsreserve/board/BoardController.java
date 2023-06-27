@@ -2,11 +2,15 @@ package com.ohgiraffers.mtvsreserve.board;
 
 import com.ohgiraffers.mtvsreserve.board.dto.BoardDTO;
 import com.ohgiraffers.mtvsreserve.board.service.BoardService;
+import com.ohgiraffers.mtvsreserve.members.login.application.dto.MemberDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
+
+import static com.ohgiraffers.mtvsreserve.members.login.common.session.SessionConst.LOGIN_MEMBER;
 
 @Controller
 public class BoardController {
@@ -29,7 +33,9 @@ public class BoardController {
     }
 
     @PostMapping("/post")
-    public String write(BoardDTO boardDTO) {
+    public String write(BoardDTO boardDTO , HttpSession session) {
+        MemberDTO memberDTO = (MemberDTO) session.getAttribute(LOGIN_MEMBER);
+        boardDTO.setAuthor(memberDTO.getName());
         boardService.savePost(boardDTO);
         return "redirect:/board";
     }
