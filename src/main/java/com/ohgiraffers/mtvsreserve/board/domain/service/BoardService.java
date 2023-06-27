@@ -43,35 +43,41 @@ public class BoardService {
         return boardDTOList;
     }
 
-
-
     //5단계
-
+//    @Transactional
+//    public BoardDTO getPost(Long id) {
+//        Optional<Board> boardWrapper = boardRepository.findById(id);
+//        Board board = boardWrapper.get();
+//
+//        BoardDTO boardDTO = BoardDTO.builder()
+//                .id(board.getId())
+//                .author(board.getAuthor())
+//                .title(board.getTitle())
+//                .content(board.getContent())
+//                .createdDate(board.getCreatedDate())
+//                .build();
+//
+//        return boardDTO;
+//    }
 
     @Transactional
     public BoardDTO getPost(Long id) {
-        Optional<Board> boardWrapper = boardRepository.findById(id);
-        Board board = boardWrapper.get();
+        Board board = boardRepository.findById(id).get();
 
         BoardDTO boardDTO = BoardDTO.builder()
                 .id(board.getId())
                 .author(board.getAuthor())
                 .title(board.getTitle())
                 .content(board.getContent())
+                .fileId(board.getFileId())
                 .createdDate(board.getCreatedDate())
                 .build();
-
         return boardDTO;
     }
+
+    @Transactional
+    public void deletePost(Long id){
+        boardRepository.deleteById(id);
+    }
+
 }
-
-/*
-    // 여기서부터 5단계
-    public PostResponse findPostById(final Long id) {
-        return boardRepository.findById(id);
-    }
-
-    public List<PostResponse> findAllPost() {
-        return boardRepository.findAll();
-    }
-*/

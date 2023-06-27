@@ -28,8 +28,12 @@ public class Board {
     @Column(length = 100, nullable = false)
     private String title;
 
+
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
+
+    @Column
+    private Long fileId;
 
     @CreatedDate
     @Column(updatable = false)
@@ -39,10 +43,11 @@ public class Board {
     private LocalDateTime modifiedDate;
 
     @Builder
-    public Board(Long id, String author, String title, String content) {
+    public Board(Long id, String author, String title, String content, Long fileId) {
         this.id = id;
         this.author = author;
         this.title = title;
         this.content = content;
+        this.fileId = fileId;
     }
 }
