@@ -1,4 +1,4 @@
-package com.ohgiraffers.mtvsreserve.board.domain.dto;
+package com.ohgiraffers.mtvsreserve.board.dto;
 
 
 import com.ohgiraffers.mtvsreserve.board.domain.entity.Board;
@@ -15,7 +15,6 @@ public class BoardDTO {
     private String author;
     private String title;
     private String content;
-    private Long fileId;
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
@@ -25,18 +24,16 @@ public class BoardDTO {
                 .author(author)
                 .title(title)
                 .content(content)
-                .fileId(fileId)
                 .build();
         return build;
     }
 
     @Builder
-    public BoardDTO(Long id, String author, String title, String content, Long fileId, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+    public BoardDTO(Long id, String author, String title, String content, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.id = id;
         this.author = author;
         this.title = title;
         this.content = content;
-        this.fileId = fileId;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
     }
