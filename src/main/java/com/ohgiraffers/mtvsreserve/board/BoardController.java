@@ -5,12 +5,21 @@ import com.ohgiraffers.mtvsreserve.board.domain.dto.FileDTO;
 import com.ohgiraffers.mtvsreserve.board.domain.service.BoardService;
 import com.ohgiraffers.mtvsreserve.board.domain.service.FileService;
 import com.ohgiraffers.mtvsreserve.board.domain.util.MD5Generator;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Controller
@@ -68,19 +77,26 @@ public class BoardController {
     }
 
 
-    // 여기서부터 5단계
     @GetMapping("/post/{id}")
     public String detail(@PathVariable("id") Long id, Model model) {
-        BoardDTO boardDTO = boardService.getPost(id);
-
+        BoardDTO boardDTO = boardService.getBoardDTO(id);
         model.addAttribute("boardDTO", boardDTO);
 
+        model.addAttribute("fileName","파일 이름입니다.");
         return "board/detail.html";
     }
 
+//    @GetMapping("/post/{id}")
+//    public String detail(@PathVariable("id") Long id, Model model) {
+//        BoardDTO boardDTO = boardService.getBoardDTO(id);
+//        model.addAttribute("boardDTO", boardDTO);
+//
+//        return "board/detail.html";
+//    }
+
     @GetMapping("/post/edit/{id}")
     public String edit(@PathVariable("id") Long id, Model model) {
-        BoardDTO boardDTO = boardService.getPost(id);
+        BoardDTO boardDTO = boardService.getBoardDTO(id);
         model.addAttribute("boardDTO", boardDTO);
         return "board/edit.html";
     }
@@ -96,6 +112,7 @@ public class BoardController {
         boardService.deletePost(id);
         return "redirect:/board";
     }
+
 
 }
 

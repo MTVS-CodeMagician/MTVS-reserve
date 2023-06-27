@@ -19,14 +19,16 @@
         ></small>
       </p>
       <p class="card-text" th:text="${boardDTO.content}"></p>
+
       <div th:if="${boardDTO.fileId != null}">
         <strong>첨부파일 : </strong>
         <a
                 class="card-text"
                 th:href="@{'/download/' + ${boardDTO.fileId}}"
-                th:text="${filename}"
-        ></a>
+                th:text="${fileName}">
+        </a>
       </div>
+
     </div>
   </div>
   <div class="row mt-3">

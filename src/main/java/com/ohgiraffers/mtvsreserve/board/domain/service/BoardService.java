@@ -59,9 +59,24 @@ public class BoardService {
 //
 //        return boardDTO;
 //    }
+//
+//    @Transactional
+//    public BoardDTO getPost(Long id) {
+//        Board board = boardRepository.findById(id).get();
+//
+//        BoardDTO boardDTO = BoardDTO.builder()
+//                .id(board.getId())
+//                .author(board.getAuthor())
+//                .title(board.getTitle())
+//                .content(board.getContent())
+//                .fileId(board.getFileId())
+//                .createdDate(board.getCreatedDate())
+//                .build();
+//        return boardDTO;
+//    }
 
     @Transactional
-    public BoardDTO getPost(Long id) {
+    public BoardDTO getBoardDTO(Long id) {
         Board board = boardRepository.findById(id).get();
 
         BoardDTO boardDTO = BoardDTO.builder()
@@ -74,6 +89,7 @@ public class BoardService {
                 .build();
         return boardDTO;
     }
+
 
     @Transactional
     public void deletePost(Long id){
