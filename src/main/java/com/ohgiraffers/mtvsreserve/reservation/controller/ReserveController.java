@@ -61,9 +61,13 @@ public class ReserveController {
     }
 
     @GetMapping("/reservCheck")
-    public String checkReservation(Model model){
-        List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation("진용민");
-        model.addAttribute("infos",tableInfoDTO);
+    public String checkReservation(Model model, HttpSession session){
+        MemberDTO memberDTO = (MemberDTO) session.getAttribute(LOGIN_MEMBER);
+        String userName = memberDTO.getName();
+
+        List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation(userName);
+        model.addAttribute("infos", tableInfoDTO);
+
         return "reservation/checkReservation";
     }
 
