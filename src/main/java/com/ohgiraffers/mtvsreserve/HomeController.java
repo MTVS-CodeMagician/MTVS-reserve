@@ -25,8 +25,14 @@ public class HomeController {
         try {
             List<BoardDTO> boardDTOList = boardService.getBoardList();
             List<BoardDTO> finalBoardList = new ArrayList<>();
-            for (int i=0; i<3; i++){
-                finalBoardList.add(boardDTOList.get(i));
+            if(boardDTOList.size() < 3){
+                for (int i=0; i<boardDTOList.size(); i++){
+                    finalBoardList.add(boardDTOList.get(i));
+                }
+            }else{
+                for (int i=0; i<3; i++){
+                    finalBoardList.add(boardDTOList.get(i));
+                }
             }
             model.addAttribute("boardList", finalBoardList);
         }catch (Exception e){
