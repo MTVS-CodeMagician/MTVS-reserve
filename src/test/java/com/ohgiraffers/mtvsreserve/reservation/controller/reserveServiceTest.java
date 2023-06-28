@@ -98,7 +98,7 @@ class reserveServiceTest {
         TableInfoDTO tableInfoDTO2 = new TableInfoDTO(4L,"2023-06-28","1",5,"test1" );
 
         String testDate= tableInfoDTO1.getDate();
-        int testRoomnum = Integer.parseInt(tableInfoDTO1.getRoomNum());
+        String testRoomnum = tableInfoDTO1.getRoomNum();
         int cursize= reservationService.findCompleteReserve(testDate,testRoomnum).size();
         System.out.println("cursize = " + cursize);
 
