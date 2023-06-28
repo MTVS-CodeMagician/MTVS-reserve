@@ -30,7 +30,10 @@ public class WebConfig implements WebMvcConfigurer {
                 .order(2)
                 .addPathPatterns("resources/**")
                 .addPathPatterns("/post/**")
-                .addPathPatterns("/reservation/**")
+                .addPathPatterns("/reservation")
+                .addPathPatterns("/doreserv")
+                .addPathPatterns("/doreserv1")
+                .addPathPatterns("/reservCheck")
                 .excludePathPatterns("/", "/members/add", "/login", "/logout",
                         "/css/**", "/*.ico", "/error", "/main", "/board");
     }
