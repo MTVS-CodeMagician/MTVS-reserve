@@ -3,7 +3,6 @@ package com.ohgiraffers.mtvsreserve.reservation.controller;
 import com.ohgiraffers.mtvsreserve.reservation.dto.TableInfoDTO;
 import com.ohgiraffers.mtvsreserve.reservation.repository.ReservationTableRepository;
 import com.ohgiraffers.mtvsreserve.reservation.service.ReservationService;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -98,7 +97,7 @@ class reserveServiceTest {
         TableInfoDTO tableInfoDTO2 = new TableInfoDTO(4L,"2023-06-28","1",5,"test1" );
 
         String testDate= tableInfoDTO1.getDate();
-        int testRoomnum = Integer.parseInt(tableInfoDTO1.getRoomNum());
+        String  testRoomnum = tableInfoDTO1.getRoomNum();
         int cursize= reservationService.findCompleteReserve(testDate,testRoomnum).size();
         System.out.println("cursize = " + cursize);
 
