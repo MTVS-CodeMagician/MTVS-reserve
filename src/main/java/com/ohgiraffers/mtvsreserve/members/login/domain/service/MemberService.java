@@ -20,9 +20,10 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    public void save(MemberDTO memberDTO) {
+    public MemberDTO save(MemberDTO memberDTO) {
         MemberEntity memberEntity = toMemberEntity(memberDTO);
         memberRepository.save(memberEntity);
+        return memberDTO;
     }
 
     public MemberDTO duplicationCheckById(String loginId) {
@@ -53,7 +54,7 @@ public class MemberService {
     }
 
     public MemberDTO findByLoginId(String LoginId){
-        Optional<MemberEntity> optionalMemberEntity=memberRepository.findByLoginId(LoginId);
+        Optional<MemberEntity> optionalMemberEntity = memberRepository.findByLoginId(LoginId);
         if(optionalMemberEntity.isPresent()){
             return MemberDTO.toMemberDTO(optionalMemberEntity.get());
         }else{
@@ -68,13 +69,5 @@ public class MemberService {
         }else{
             return null;
         }
-    }
-    public void update(MemberDTO memberDTO){
-        // 업데이트 쿼리를 날려주니?...
-        memberRepository.save(toUpdateMemberEntity(memberDTO));
-    }
-
-    public void delete(MemberDTO member)  {
-        memberRepository.delete(toMemberEntity(member));
     }
 }

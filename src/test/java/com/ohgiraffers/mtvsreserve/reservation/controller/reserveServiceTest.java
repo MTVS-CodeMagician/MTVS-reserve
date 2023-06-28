@@ -3,7 +3,6 @@ package com.ohgiraffers.mtvsreserve.reservation.controller;
 import com.ohgiraffers.mtvsreserve.reservation.dto.TableInfoDTO;
 import com.ohgiraffers.mtvsreserve.reservation.repository.ReservationTableRepository;
 import com.ohgiraffers.mtvsreserve.reservation.service.ReservationService;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
