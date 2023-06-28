@@ -1,10 +1,7 @@
 package com.ohgiraffers.mtvsreserve.reservation.dto;
 
 import com.ohgiraffers.mtvsreserve.reservation.entity.ReservationTableEntity;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Date;
 
@@ -12,6 +9,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @ToString
+@AllArgsConstructor
 public class TableInfoDTO {
     private Long id;
     private String date;

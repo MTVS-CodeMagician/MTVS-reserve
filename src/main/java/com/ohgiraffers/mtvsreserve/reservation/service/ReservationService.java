@@ -106,7 +106,6 @@ public class ReservationService {
         out.println("alert('"+notice+"');");
         out.println("</script>");
         out.flush();
-        return;
     }
 
 
@@ -148,5 +147,32 @@ public class ReservationService {
         String[] dates = beforeDateStr.split("-");
         String finalDeleteDate = dates[0] + dates[1] + dates[2];
         reservationTableRepository.deleteByDate(finalDeleteDate);
+    }
+
+    public void saveForTest(TableInfoDTO tableInfoDTO) {
+        /*
+        1.DTO->entity변환
+        2.repository의 save method 호출
+         */
+        String date = tableInfoDTO.getDate();
+        String[] dates = date.split("-");
+        String final_date = dates[0] + dates[1] + dates[2];
+        tableInfoDTO.setDate(final_date);
+        List<TableInfoDTO> check2times=findReserve();
+        int count=0;
+        for (int i=0; i<check2times.size(); i++){
+        }
+        for (int i=0; i<check2times.size(); i++){
+            if(tableInfoDTO.getUserId().equals(check2times.get(i).getUserId())){
+                count++;
+            }
+        }
+        if(count<2) {
+            ReservationTableEntity reservationTableEntity = ReservationTableEntity.toReservationTableEntity(tableInfoDTO);
+            reservationTableRepository.save(reservationTableEntity);
+        }else{
+            String mesg=" "+tableInfoDTO.getUserId()+"님은 더 이상 예약할 수 없습니다.";
+            throw new IllegalStateException("더이상 예약 불가");
+        }
     }
 }
