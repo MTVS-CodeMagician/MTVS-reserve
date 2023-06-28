@@ -59,7 +59,7 @@ public class ReserveController {
     }
 
     @GetMapping("/reservCheck")
-    public String checkReservation(@Valid Model model, HttpSession session){
+    public String checkReservation(Model model, HttpSession session){
 
         MemberDTO memberDTO = (MemberDTO) session.getAttribute(LOGIN_MEMBER);
         String userName = memberDTO.getName();
