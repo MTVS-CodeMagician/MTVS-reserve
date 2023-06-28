@@ -51,16 +51,15 @@ public class ReservationService {
         }
     }
 
-    public List<TableInfoDTO> findCompleteReserve(String date, int roomNum) {
+    public List<TableInfoDTO> findCompleteReserve(String date, String roomNum) {
         String[] dates = date.split("-");
         String final_date = dates[0] + dates[1] + dates[2];
 
         List<ReservationTableEntity> reservationTableEntityList = reservationTableRepository.findAll();
         List<TableInfoDTO> tableInfoDTOList = new ArrayList<>();
-        String roomN=String.valueOf(roomNum);
         int j = 0;
         for (ReservationTableEntity reservationTableEntity : reservationTableEntityList) {
-            if (reservationTableEntityList.get(j).getDate().equals(final_date)&&(reservationTableEntityList.get(j).getRoomNum().equals(roomN))){
+            if (reservationTableEntityList.get(j).getDate().equals(final_date)&&(reservationTableEntityList.get(j).getRoomNum().equals(roomNum))){
                 tableInfoDTOList.add(TableInfoDTO.toTableInfoDTO(reservationTableEntity));
             }
             j++;

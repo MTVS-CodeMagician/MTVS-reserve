@@ -26,7 +26,6 @@ public class BoardController {
         model.addAttribute("postList", boardDTOList);
         return "board/list.html";
     }
-
     @GetMapping("/post")
     public String post() {
         return "board/post.html";
@@ -42,11 +41,13 @@ public class BoardController {
 
     // detail 조회
     @GetMapping("/post/{id}")
-    public String detail(@PathVariable("id") Long id, Model model) {
+    public String detail(@PathVariable("id") Long id, Model model,HttpSession session) {
         BoardDTO boardDTO = boardService.getPost(id);
-
         model.addAttribute("post", boardDTO);
 
+        MemberDTO memberDTO = (MemberDTO) session.getAttribute(LOGIN_MEMBER);
+        String userName=memberDTO.getName();
+        model.addAttribute("userName",userName);
         return "board/detail.html";
     }
 
@@ -59,7 +60,9 @@ public class BoardController {
     }
 
     @PutMapping("/post/edit/{id}")
-    public String update(BoardDTO boardDTO) {
+    public String update(BoardDTO boardDTO, HttpSession session) {
+        MemberDTO memberDTO = (MemberDTO) session.getAttribute(LOGIN_MEMBER);
+        boardDTO.setAuthor(memberDTO.getName());
         boardService.savePost(boardDTO);
         return "redirect:/board";
     }

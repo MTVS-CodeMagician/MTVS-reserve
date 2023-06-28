@@ -23,7 +23,7 @@ public class ReserveController {
     private final ReservationService reservationService;
 
     @GetMapping("doreserve")
-    public String doReservePage(@RequestParam int roomNum ,Model model){
+    public String doReservePage(@RequestParam String roomNum ,Model model){
         model.addAttribute("roomNum",roomNum);
         String date=reservationService.CurrentDay();
         model.addAttribute("today",date);
@@ -33,11 +33,10 @@ public class ReserveController {
         return "/reservation/doreserve";
     }
     @PostMapping("doreserve")
-    public String doReserve(@RequestParam int roomNum, @RequestParam String date, Model model ){
+    public String doReserve(@RequestParam String roomNum, @RequestParam String date, Model model ){
         model.addAttribute("roomNum",roomNum);
         model.addAttribute("date",date);
 
-        // 2
         List<TableInfoDTO> roomlist= reservationService.findCompleteReserve(date, roomNum);
         model.addAttribute("roomlist",roomlist);
         List<TimeListDTO> timelist =reservationService.timeList();
@@ -51,7 +50,6 @@ public class ReserveController {
 
         MemberDTO memberDTO = (MemberDTO) session.getAttribute(LOGIN_MEMBER);
         tableInfoDTO.setUserId(memberDTO.getName());
-
         reservationService.save(tableInfoDTO,response);
         return "reservation/viewreserve";
     }
@@ -60,11 +58,12 @@ public class ReserveController {
     public String checkReservation(Model model, HttpSession session){
         MemberDTO memberDTO = (MemberDTO) session.getAttribute(LOGIN_MEMBER);
         String userName = memberDTO.getName();
+        model.addAttribute("userName",userName);
 
         List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation(userName);
         model.addAttribute("infos", tableInfoDTO);
-        List<TimeListDTO> timelist =reservationService.timeList();
 
+        List<TimeListDTO> timelist =reservationService.timeList();
         model.addAttribute("timelist",timelist);
 
         return "reservation/checkReservation";
