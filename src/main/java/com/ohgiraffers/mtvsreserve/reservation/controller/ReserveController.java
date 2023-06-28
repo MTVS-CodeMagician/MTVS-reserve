@@ -23,7 +23,6 @@ import static com.ohgiraffers.mtvsreserve.members.login.common.session.SessionCo
 @RequiredArgsConstructor
 public class ReserveController {
     private final ReservationService reservationService;
-
     @GetMapping("doreserve")
     public String doReservePage(@RequestParam String roomNum ,Model model){
         model.addAttribute("roomNum",roomNum);
@@ -43,7 +42,7 @@ public class ReserveController {
         model.addAttribute("roomlist",roomlist);
         List<TimeListDTO> timelist =reservationService.timeList();
         model.addAttribute("timelist",timelist);
-        return "reservation/doreserve1";
+        return "doreservetime";
     }
     @PostMapping("doreserve1")
     public String doReserve1(@ModelAttribute TableInfoDTO tableInfoDTO
@@ -56,20 +55,19 @@ public class ReserveController {
         return "reservation/viewreserve";
     }
 
-    @GetMapping("/reservCheck")
+    @GetMapping("/mypage")
     public String checkReservation(Model model, HttpSession session){
 
         MemberDTO memberDTO = (MemberDTO) session.getAttribute(LOGIN_MEMBER);
-        String userName = memberDTO.getName();
-        model.addAttribute("userName",userName);
+        model.addAttribute("user",memberDTO);
 
-        List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation(userName);
+        List<TableInfoDTO> tableInfoDTO = reservationService.viewAllReservation(memberDTO.getName());
         model.addAttribute("infos", tableInfoDTO);
 
         List<TimeListDTO> timelist =reservationService.timeList();
         model.addAttribute("timelist",timelist);
 
-        return "reservation/checkReservation";
+        return "mypage";
     }
 
     @GetMapping("deletereservationinfo/{id}")
