@@ -111,6 +111,8 @@
 
 
 ## 📌 SW유스케이스
+위키 - [USECASE](https://gnaseel.tistory.com/22)
+
 ![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/4b428dd6-c93c-4213-8d21-743f1d1681fc)
 <br>
 <br>
@@ -118,17 +120,18 @@
 
 
 ## 🧾 서비스 흐름도
+위키 - [FlowChart](https://blog.naver.com/ycpiglet/222113989214)
+
 ![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/a76c1027-3ade-4284-aec0-96be084f5995)
 <br>
 <br>
 <br>
 
 📊 E-R Diagram
+위키 - [ERD](https://blog.naver.com/ycpiglet/222113989214)
 ---
 ![MagicPot_ERD](https://user-images.githubusercontent.com/78246187/127444877-dda61529-a8ff-40ce-bb8b-bff21db3ea05.png) <br><br>
 
-
-## 📌 ER다이어그램
 ![image](https://user-images.githubusercontent.com/103619605/182579207-e5070ca5-2cde-43d1-94f7-5414a2d56a9f.png)
 <br>
 <br>
@@ -213,6 +216,8 @@
 </table>
 
 
+<br>
+
 
 ## 📌 Trouble Shooting: 트러블 슈팅
 
@@ -245,3 +250,22 @@
   </div>
   </details>
  
+<br>
+
+## Wiki
+Home
+<br>
+### 프로젝트 세부 사항
+Notion<br>
+Testcode<br>
+API<br>
+
+### 협업
+ProjectBoard<br>
+Git-Flow<br>
+
+### Use Case
+https://github.com/f-lab-edu/make-delivery/wiki/Use-Case
+
+### Front
+https://github.com/f-lab-edu/make-delivery/wiki/%ED%99%94%EB%A9%B4-%EC%84%A4%EA%B3%84
