@@ -32,7 +32,7 @@
   </div>
 </nav>
 <div class="container-sm" align="center">
-<div class="card border-success mb-3 " style="max-width: 36rem;">
+<div class="card border-success mb-3" style="max-width: 36rem;">
   <div class="card-header">User 정보</div>
   <div class="card-body text-success">
     <p class="card-text" align="left" th:text="|이름 : ${user.getName()}|"></p>
@@ -41,9 +41,9 @@
   </div>
 </div>
 </div>
-<div class="container">
-  <h2 th:text="|${user.getName()}님의 현재 예약 목록|"></h2>
-  <table class="table">
+<div class="container-md mt-4">
+  <h2 class="text-center text-black-50 mt-3 mb-5" th:text="|${user.getName()}님의 현재 예약 목록|"></h2>
+  <table class="table table-success">
     <thead>
     <tr>
       <th>Name</th>
