@@ -111,14 +111,14 @@
 
 
 ## 📌 SW유스케이스
-![스크린샷(27)](https://user-images.githubusercontent.com/103619605/182365968-09e3e196-5797-4fec-9eab-765e8925c9b8.png)
+![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/4b428dd6-c93c-4213-8d21-743f1d1681fc)
 <br>
 <br>
 <br>
 
 
 ## 🧾 서비스 흐름도
-![image](https://user-images.githubusercontent.com/103620466/182580307-90a17461-0e29-4e41-9769-78865495a7a7.png)
+![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/a76c1027-3ade-4284-aec0-96be084f5995)
 <br>
 <br>
 <br>
@@ -158,6 +158,19 @@
 <br>
 
 <br>
+
+
+### 게시판
+![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/717be6ad-d808-4748-88a5-3befa06b5697)
+
+## 게시판2
+![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/26e9f513-535e-4517-bde2-635924ccaddd)
+
+<br>
+<br>
+<br>
+
+
 
 ## 💻 팀원 소개
 
