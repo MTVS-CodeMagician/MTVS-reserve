@@ -42,7 +42,7 @@ public class ReserveController {
         model.addAttribute("roomlist",roomlist);
         List<TimeListDTO> timelist =reservationService.timeList();
         model.addAttribute("timelist",timelist);
-        return "doreservetime";
+        return "reservation/doreservetime";
     }
     @PostMapping("doreserve1")
     public String doReserve1(@ModelAttribute TableInfoDTO tableInfoDTO
@@ -73,6 +73,6 @@ public class ReserveController {
     @GetMapping("deletereservationinfo/{id}")
     public String deleteReservationInfo(@PathVariable Long id){
         reservationService.deleteById(id);
-        return "redirect:/reservCheck";
+        return "redirect:/mypage";
     }
 }
