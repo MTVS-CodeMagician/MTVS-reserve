@@ -104,6 +104,11 @@
                 <div class="card-header">
                     <button class="btn btn-success" onclick="location.href='/board'">게시판 페이지 이동</button>
                 </div>
+                <div class="card-body">
+                    <th:block th:each="blist :${boardList}">
+                        <td style="margin-right: auto" th:text="${blist.getTitle()}"></td><br><hr>
+                    </th:block>
+                </div>
             </div>
         </div>
         <div class="col">
@@ -114,11 +119,7 @@
                 </div>
             </div>
         </div>
-
-        <button class="btn btn-success" onclick="location.href='/reservCheck'">예약 조회 페이지 이동</button>
     </div>
 </div>
-
-
 </body>
 </html>
