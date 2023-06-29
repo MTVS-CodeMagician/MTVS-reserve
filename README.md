@@ -30,23 +30,13 @@
 ## 🛠 개발 환경
 
 - Language  : Java 11 (OpenJDK 11.0.15.9-1)
-- Front : Bootstrap(2.7.12)
-- 형상 관리 : Github
-
-[//]: # (여기는 참고용)
-- Language  : Java (OpenJDK 8)
-- DBMS : Oracle (11g)
-- Server : Apache Tomcat (8.5)
+- DB : MySQL
+- Server : Apache Tomcat
 - Front : HTML5, CSS3, JavaScript, jQuery, Bootstrap
-- Server Programming : JSP/Servlet, AJAX
-- Framework : Spring, MyBatis
+- Framework : Spring boot(2.7.12)
 - Build Tool : Maven
-- IDE : Eclipse, Visual Studio Code, sqldeveloper
-- Modeling Tool : StarUML, erdcloud, 카카오오븐
+- IDE : Intellij
 - 형상 관리 : Github
-- API : Summernote, I'm port, Kakao sendLink, Naver login, Daum map
-
-[//]: # (여기는 참고용)
 
 <br>
 
@@ -97,7 +87,7 @@
       └── reservation
 
 /src/test
-└── test                                   테스트코드 관련 설정 파일
+└── test                                   
 ```
 
 ## 테스트
@@ -127,10 +117,7 @@
 
 
 ## 📔 Architecture: 서비스 아키텍쳐
-
-![Slice 4](https://user-images.githubusercontent.com/102432453/194732437-e582ef0a-5d9a-4772-8f46-95208a556585.jpg)
-
-![image](https://user-images.githubusercontent.com/103619605/182366619-1c5ad67d-7b9d-4844-bcef-00ca75498f61.png)
+![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/ac93e883-b8ae-4920-a232-5cdf6e867115)
 <br>
 <br>
 <br>
@@ -140,7 +127,7 @@
 ## 📌 SW유스케이스
 위키 - [USECASE](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/USECASE)
 
-![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/4b428dd6-c93c-4213-8d21-743f1d1681fc)
+![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/eb45c7ef-7718-4aac-8b1b-b525ff4d1b7b)
 <br>
 <br>
 <br>
@@ -156,10 +143,8 @@
 
 ## 📊 E-R Diagram
 위키 - [ERD](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/ERD)
+![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/ffda4a80-3e67-434f-8924-5cb0d876d20d)
 
-![MagicPot_ERD](https://user-images.githubusercontent.com/78246187/127444877-dda61529-a8ff-40ce-bb8b-bff21db3ea05.png) <br><br>
-
-![image](https://user-images.githubusercontent.com/103619605/182579207-e5070ca5-2cde-43d1-94f7-5414a2d56a9f.png)
 <br>
 <br>
 <br>
@@ -283,12 +268,12 @@
 ### [Home](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki)
 
 ### 프로젝트 세부 사항
-* [Notion] <br>
-* [Testcode] <br>
-* [API] <br>
+* [Notion](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/Notion) <br>
+* [Testcode](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C) <br>
+* [API](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/API) <br>
 
 ### 협업
-* [ProjectBoard] <br>
+* [프로젝트보드](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%B3%B4%EB%93%9C) <br>
 * [깃플로우](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%EA%B9%83%ED%94%8C%EB%A1%9C%EC%9A%B0) <br>
 
 ### 적용 기술 및 전략
