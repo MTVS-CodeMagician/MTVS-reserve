@@ -99,21 +99,6 @@
 
 <br/>
 
-`api` : 서버와의 통신을 위한 폴더입니다. axios를 활용한 작업을 주로 담당합니다.
-
-`assets` : 컴포넌트를 구성하는 이미지파일들을 저장하기위한 폴더 입니다.
-
-`components` : 페이지를 구성하는 컴포넌트들을 정리하기위한 폴더입니다.
-
-`hooks` : 커스텀 훅을 정리하기 위한 폴더입니다.
-
-`pages` : 서비스를 구성하는 페이지를 정리하기 위한 폴더입니다.
-
-`redux` : 전역변수를 관리하는 store와 modules를 정리하기 위한 폴더입니다.
-
-`shared` : 라우팅을 위한 폴더입니다. 서브라우터를 활용하여 더 세분화하여 정리하였습니다.
-
-`utils` : 유용하게 쓸 수 있는 함수와 글로벌하게 적용되는 컴포넌트들을 관리하기 위한 폴더입니다.
 
 
 ## 📔 Architecture: 서비스 아키텍쳐
@@ -196,47 +181,14 @@
 
 
 <br>
-
-
-## 📌 Trouble Shooting: 트러블 슈팅
-
-<details> <summary>➡️ 😛김민석: 새로고침시 데이터가 안불러와지는 문제가 있었습니다. </summary> <div markdown="1">
-  <br/>
-
-**`문제원인`**
-* 인터셉터를 사용하기에 토큰이 자동으로 담겨 서버에 요청을 보내는 줄 알았는데 새로고침을 할 경우 인터셉터가 실행되기전에 요청을 보내고 있었습니다. [개발자도구]의 [네트워크]에서 로그를 보고 토큰이 담겨지지 않은 것을 확인할 수 있었습니다.
-
-**`해결방안`**
-* useEffect를 통해 axios인스턴스를 실행시켜 데이터를 불러왔었는데, 인스턴스가 실행되기전에 sessionStorage.setItem으로 토큰을 담는 코드를 작성해주었습니다.
-
-**`자세한 내용`**
-* [React | 새로고침시 데이터가 안불러와지는 문제](https://velog.io/@shackstack/React-%EC%83%88%EB%A1%9C%EA%B3%A0%EC%B9%A8%EC%8B%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B0%80-%EC%95%88%EB%B6%88%EB%9F%AC%EC%99%80%EC%A7%80%EB%8A%94-%EB%AC%B8%EC%A0%9C)
-
-
-  </div>
-  </details>
-
-<details> <summary>➡️ 🥸오정진: React slick 각 자식요소에 Margin 및 Padding css 설정이 안 되는 이슈를 발견하였습니다. </summary> <div markdown="1">
-  <br/>
-
-**`문제원인`**
-* 라이브러리 특성상 기본적으로 설정되어 있는 css 파일들이 있기에, 기존의 설정되어 있는 css가 우선적으로 선언되어 내가 선언하는 css가 적용이 되지 않는 문제를 발견하였습니다.
-
-
-**`해결방안`**
-* react slick build시 사용되는 slick.css와 slick-theme.css를 따로 빼와서 margin과 padding default 값을 삭제 해, 원하는 대로 css 수정을 가능하게 변경하였습니다.
-
-  </div>
-  </details>
- 
 <br>
 
 # Wiki
 ### [Home](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki)
 
 ### 협업
-* [프로젝트보드](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%B3%B4%EB%93%9C) <br>
 * [깃플로우](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%EA%B9%83%ED%94%8C%EB%A1%9C%EC%9A%B0) <br>
+* [프로젝트보드](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%B3%B4%EB%93%9C) <br>
 
 ### 프로젝트 세부 사항
 * [Notion](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/Notion) <br>
