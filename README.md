@@ -56,28 +56,55 @@
 
 ```
 /src/main
-├── application                      사용자가 파일을 실행하면서 여러 로직들이 조합
-│   ├── controller                   사용자의 요청을 받아 각 서비스에 전달, 응답을 뷰에 전달
-│   ├── service                      도메인 서비스의 로직들을 조합하여 기능을 실행
-│   ├── view                         사용자가 요청을 보내고 응답을 받는 화면. 여기서는 콘솔의 역할
-├── domain                           Entity, Repository 관리 - DB 테이블과 entity를 1:1 매칭
-│   ├── entity                       DB의 데이터를 조회하는 로직
-│   ├── repository                   DB에 데이터가 저장되기 전에 검증하는 로직 및 테스트를 위해 초기화 하는 로직 구현
-│   └── service                      각 객체의 개별적인 기능을 하는 로직
-├── dto                              객체 정보 정의
-├── infra                            #infra
-└────── database                     데이터베이스
-/src/test
-└── test                             테스트코드 관련 설정 파일
+├── board
+│   ├── controller
+│   ├── domain
+│   │    ├── entity
+│   │    └── repository
+│   ├── dto
+│   └── service
+├── members
+│   └── login
+│        ├── application
+│        │    ├── controller
+│        │    └── dto
+│        ├── common
+│        │    ├── argumentresolver
+│        │    ├── interceptor
+│        │    └── session
+│        └── domain
+│              ├── entity
+│              ├── repository
+│              └── service
+└── reservation
+     ├── controller
+     ├── dto
+     ├── entity
+     ├── repository
+     └── service
 
-``` 
+/main/resources
+├── static
+│   ├── css
+│   └── img
+└── static
+     ├── board
+     ├── common
+     ├── css
+     ├── error
+     ├── login
+     ├── members
+      └── reservation
+
+/src/test
+└── test                                   테스트코드 관련 설정 파일
+```
 
 ## 테스트
 ```
-1. Domain의 UserRepositoryTest        사용자의 이름을 입력받을 때 2~5글자 사이인지 확인.
-                                      숫자, 특수문자 등이 들어갈 때 IllegalArgumentException 발생하는지 확인.
-2. service의 MonsterCServiceTest      몬스터의 공격 성공 확률이 80%인지 확인.
-3. service의 UserServiceTest          스톤의 갯수가 3 이상이면, 레벨이 오르는지 확인.
+1. login - Domain - service의 LoginServiceTest        
+2. login - Domain - service의 MemberServiceTest
+3. reservation - controller의 reserveServiceTest
 ``` 
 
 <br/>
