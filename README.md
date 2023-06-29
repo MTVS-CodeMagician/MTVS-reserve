@@ -192,40 +192,12 @@
 
 | 이름                                                           | 포지션    | 담당 기능 구현          |
 |--------------------------------------------------------------|--------| ----------------------------------------|
-| <a href="https://github.com/jinvvoo" target='_blank'>김진우</a> | `서버개발` | `커뮤니티 게시글 및 댓글 CRUD, 무한스크롤, 좋아요 기능` `모임 소통의장 CRUD`| 
-| <a href="https://github.com/jinvvoo" target='_blank'>김태현</a> | `서버개발`   | `메인 페이지` `데일리 미션` `뱃지 시스템` `마이 페이지` `제로샵(온라인)` `구글 로그인` `자동 배포`| 
-| <a href="https://github.com/jinvvoo" target='_blank'>전태현</a> | `서버개발`   | `모임 페이지` `모임 CRUD` `카카오로그인` `제로샵(오프라인)` | 
-| <a href="https://github.com/jinvvoo" target='_blank'>정민호</a> | `서버개발`   | `커뮤니티 댓글 CRUD` `모임 좋아요 및 태그조회` `커뮤니티 태그조회` `모임후기 CRUD` `커뮤니티, 모임 검색`| 
-| <a href="https://github.com/jinvvoo" target='_blank'>진용민</a> | `서버개발`   | `커뮤니티 댓글 CRUD` `모임 좋아요 및 태그조회` `커뮤니티 태그조회` `모임후기 CRUD` `커뮤니티, 모임 검색`| 
+| <a href="https://github.com/jinvvoo" target='_blank'>김진우</a> | `서버개발`   | `커뮤니티 게시판 리스트 및 조회` `게시판 무한스크롤` `DB`| 
+| <a href="https://github.com/jinvvoo" target='_blank'>김태현</a> | `서버개발`   | `로그인 페이지` `에러 페이지` `회원 데이터 검증` `DB`| 
+| <a href="https://github.com/jinvvoo" target='_blank'>전태현</a> | `서버개발`   | `예약 조회 기능` `예약 삭제 기능` `메인페이지` `예약 기능 테스트` `프론트 엔드 디자인`  `DB` | 
+| <a href="https://github.com/jinvvoo" target='_blank'>정민호</a> | `서버개발`   | `커뮤니티 게시판 수정` `커뮤니티 게시판 삭제` `게시판 기능 테스트` `DB`| 
+| <a href="https://github.com/jinvvoo" target='_blank'>진용민</a> | `서버개발`   | `예약기능` `특정 조건에 따른 예약 조회 기능` `예약 페이지` `프론트 엔드 디자인` `My Page` `DB`| 
 
-<br>
-
-<table>
-  <tr>
-    <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
-    <td align="center"><img src="https://mb.ntdtv.kr/assets/uploads/2019/01/Screen-Shot-2019-01-08-at-4.31.55-PM-e1546932545978.png" width="100" height="100"/></td>
-    <td align="center"><img src="https://www.rcreplicas.co.kr/shopimages/rcreplicas/0540030004873.jpg?1662014818" width="100" height="100"/></td>
-    <td align="center"><img src="https://i.pinimg.com/236x/ed/bb/53/edbb53d4f6dd710431c1140551404af9.jpg" width="100" height="100"/></td>
-    <td align="center"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fpost.phinf.naver.net%2FMjAxOTA1MTZfMTk5%2FMDAxNTU3OTM3Nzk5OTc2.RYHaYoOO6PJpy1jJB3aphq0xufqtFmXAKcbUrxRIoyIg.hRUVOlJAPZf8GvyovPIkDmhC6ZqhIF5pKkibnDTCBKYg.JPEG%2FIAGU9C6_iwxod_Z2Q7dYWNGdnGx4.jpg&type=sc960_832" width="100" height="100"/></td>
-  </tr>
-
-  <tr>
-    <td align="center"><a href="https://github.com/Chaeyuny" target='_blank'>김진우</a></td>
-    <td align="center"><a href="https://github.com/hyunUChoi" target='_blank'>김태현</a></td>
-    <td align="center"><a href="https://github.com/run-acorn" target='_blank'>전태현</a></td>
-    <td align="center"><a href="https://github.com/3susu3" target='_blank'>정민호</a></td>
-    <td align="center"><a href="https://github.com/CodeJugller" target='_blank'>진용민</a></td>
-  </tr>
-
-  <tr>
-    <td align="center"><b>서버개발</b></td>
-    <td align="center"><b>서버개발</b></td>
-    <td align="center"><b>서버개발</b></td>
-    <td align="center"><b>서버개발</b></td>
-    <td align="center"><b>서버개발</b></td>
-  </tr>
-
-</table>
 
 
 <br>
@@ -267,14 +239,14 @@
 # Wiki
 ### [Home](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki)
 
+### 협업
+* [프로젝트보드](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%B3%B4%EB%93%9C) <br>
+* [깃플로우](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%EA%B9%83%ED%94%8C%EB%A1%9C%EC%9A%B0) <br>
+
 ### 프로젝트 세부 사항
 * [Notion](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/Notion) <br>
 * [Testcode](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C) <br>
 * [API](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/API) <br>
-
-### 협업
-* [프로젝트보드](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%B3%B4%EB%93%9C) <br>
-* [깃플로우](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%EA%B9%83%ED%94%8C%EB%A1%9C%EC%9A%B0) <br>
 
 ### 적용 기술 및 전략
 * [USECASE](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/USECASE)
