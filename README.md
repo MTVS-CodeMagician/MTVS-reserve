@@ -111,7 +111,7 @@
 
 
 ## 📌 SW유스케이스
-위키 - [USECASE](https://gnaseel.tistory.com/22)
+위키 - [USECASE](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/USECASE)
 
 ![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/4b428dd6-c93c-4213-8d21-743f1d1681fc)
 <br>
@@ -120,7 +120,7 @@
 
 
 ## 🧾 서비스 흐름도
-위키 - [FlowChart](https://blog.naver.com/ycpiglet/222113989214)
+위키 - [FlowChart](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/Flow-Chart)
 
 ![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/a76c1027-3ade-4284-aec0-96be084f5995)
 <br>
@@ -128,7 +128,7 @@
 <br>
 
 ## 📊 E-R Diagram
-위키 - [ERD](https://blog.naver.com/ycpiglet/222113989214)
+위키 - [ERD](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/ERD)
 
 ![MagicPot_ERD](https://user-images.githubusercontent.com/78246187/127444877-dda61529-a8ff-40ce-bb8b-bff21db3ea05.png) <br><br>
 
@@ -261,8 +261,8 @@ Testcode<br>
 API<br>
 
 ### 협업
-ProjectBoard<br>
-Git-Flow<br>
+ProjectBoard <br>
+[Git-Flow](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/Github-Flow) <br>
 
 ### Use Case
 https://github.com/f-lab-edu/make-delivery/wiki/Use-Case
