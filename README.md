@@ -252,20 +252,21 @@
  
 <br>
 
-## Wiki
-Home
-<br>
+# Wiki
+### [Home](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki)
+
 ### 프로젝트 세부 사항
-Notion<br>
-Testcode<br>
-API<br>
+* [Notion] <br>
+* [Testcode] <br>
+* [API] <br>
 
 ### 협업
-ProjectBoard <br>
-[Git-Flow](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/Github-Flow) <br>
+* [ProjectBoard] <br>
+* [깃플로우](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/%EA%B9%83%ED%94%8C%EB%A1%9C%EC%9A%B0) <br>
 
-### Use Case
-https://github.com/f-lab-edu/make-delivery/wiki/Use-Case
-
-### Front
-https://github.com/f-lab-edu/make-delivery/wiki/%ED%99%94%EB%A9%B4-%EC%84%A4%EA%B3%84
+### 적용 기술 및 전략
+* [USECASE](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/USECASE)
+* [ERD](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/ERD)
+* [Github-Flow](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/Github-Flow)
+* [Flow-Chart](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/Flow-Chart)
+* [Figma](https://github.com/MTVS-CodeMagician/MTVS-reserve/wiki/Figma)
