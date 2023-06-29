@@ -172,8 +172,8 @@
 
 | 이름                                                           | 포지션    | 담당 기능 구현                          |
 |----------------------------------------------------------------|-----------| ----------------------------------------|
-| <a href="https://github.com/jinvvoo" target='_blank'>김진우</a> | `서버개발`| `커뮤니티 게시판 리스트` `조회, 글쓰기, 수정, 삭제` `디자인` `무한스크롤` `DB`| 
-| <a href="https://github.com/taedyyyyy" target='_blank'>김태현</a> | `서버개발`| `로그인 페이지` `에러 페이지` `회원 데이터 검증` `DB`| 
+| <a href="https://github.com/jinvvoo" target='_blank'>김진우</a> | `서버개발`| `커뮤니티 게시판 리스트` `조회, 글쓰기, 수정, 삭제` `게시판 디자인` `무한스크롤` `DB`| 
+| <a href="https://github.com/taedyv" target='_blank'>김태현</a> | `서버개발`| `로그인 페이지` `회원가입, 로그인 기능` `에러 페이지` `회원 데이터 검증` `DB`| 
 | <a href="https://github.com/JeonTaeHyeon" target='_blank'>전태현</a> | `서버개발`| `예약 조회 기능` `예약 삭제 기능` `메인페이지` `예약 기능 테스트` `프론트 엔드 디자인` `DB` | 
 | <a href="https://github.com/jeongmino1" target='_blank'>정민호</a> | `서버개발`| `커뮤니티 게시판 리스트` `게시판 조회, 글쓰기, 수정, 삭제` `게시판 기능 테스트` `DB`| 
 | <a href="https://github.com/CodeJugller" target='_blank'>진용민</a> | `서버개발`| `예약기능` `특정 조건에 따른 예약 조회 기능` `예약 페이지` `프론트 엔드 디자인` `My Page` `DB`| 
