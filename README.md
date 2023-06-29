@@ -151,36 +151,30 @@
 
 ## ✅ 화면 구성
 
-### 회원가입 / 메인화면 / 사용자 튜토리얼 화면
-![image](https://user-images.githubusercontent.com/103620466/182588812-326be119-90cb-4264-b3f1-bb7eb059888f.png)
+### 메인페이지 / 로그인 / 회원가입
+<img width="960" alt="image" src="https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/4c88d3c4-3700-4640-94de-27fccc16afa5">
 <br>
 <br>
 
-### 매장 보기 화면 (전체 매장 / 카테고리 선택 / 매장명 검색)
-![image](https://user-images.githubusercontent.com/103620466/182589092-43fdf433-026b-47da-9d48-a5c5105ecdf3.png)
-<br>
-<br>
-
-### 커뮤니티 게시판 화면 / 리뷰 등록 / 리뷰 수정
-![image](https://user-images.githubusercontent.com/103620466/182589351-00081d31-ca43-4193-9fb2-23fa1b506990.png)
-<br>
-<br>
-
-### 등급 시각화 / 리워드 화면 / 신규 매장등록 화면
-![image](https://user-images.githubusercontent.com/103620466/182589764-d97e7c59-957b-47aa-a884-1e62ba9cd57d.png)
+### 마이페이지 (회원 정보 / 예약 목록)
+<img width="960" alt="image" src="https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/8c71162e-b272-4d9d-84a9-2cb8804cf450">
 <br>
 <br>
 <br>
 
+### 게시판 (리스트 / 글쓰기 / 조회 / 수정)
+<img width="960" alt="image" src="https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/21f19d87-4f9c-4530-8a5b-04613174b40a">
+<img width="960" alt="image" src="https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/e673124f-d556-418a-9f32-9db519423979">
+<img width="960" alt="image" src="https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/983a1c2c-bc43-4174-9fb8-cb74bda80f1e">
+<img width="960" alt="image" src="https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/63f7e3ec-d1ce-443b-963a-98a61b847933">
+<br>
+<br>
 <br>
 
-
-### 게시판
-![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/717be6ad-d808-4748-88a5-3befa06b5697)
-
-## 게시판2
-![image](https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/26e9f513-535e-4517-bde2-635924ccaddd)
-
+### 메타버스 스터디 라운지 예약 시스템
+<img width="960" alt="image" src="https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/b8d04a46-5df1-491c-9b46-5a9648b5255f">
+<img width="960" alt="image" src="https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/c5d15087-e574-4b17-bf88-fd95250e23f0">
+<img width="960" alt="image" src="https://github.com/MTVS-CodeMagician/MTVS-reserve/assets/136250818/0282ec9d-8613-4eac-8916-a07f7de3857e">
 <br>
 <br>
 <br>
@@ -192,10 +186,10 @@
 
 | 이름                                                           | 포지션    | 담당 기능 구현          |
 |--------------------------------------------------------------|--------| ----------------------------------------|
-| <a href="https://github.com/jinvvoo" target='_blank'>김진우</a> | `서버개발`   | `커뮤니티 게시판 리스트 및 조회` `게시판 무한스크롤` `DB`| 
+| <a href="https://github.com/jinvvoo" target='_blank'>김진우</a> | `서버개발`   | `커뮤니티 게시판 리스트` `게시판 조회, 글쓰기, 수정, 삭제` `게시판 프론트 엔드 디자인` `게시판 무한스크롤` `DB`| 
 | <a href="https://github.com/jinvvoo" target='_blank'>김태현</a> | `서버개발`   | `로그인 페이지` `에러 페이지` `회원 데이터 검증` `DB`| 
 | <a href="https://github.com/jinvvoo" target='_blank'>전태현</a> | `서버개발`   | `예약 조회 기능` `예약 삭제 기능` `메인페이지` `예약 기능 테스트` `프론트 엔드 디자인`  `DB` | 
-| <a href="https://github.com/jinvvoo" target='_blank'>정민호</a> | `서버개발`   | `커뮤니티 게시판 수정` `커뮤니티 게시판 삭제` `게시판 기능 테스트` `DB`| 
+| <a href="https://github.com/jinvvoo" target='_blank'>정민호</a> | `서버개발`   | `커뮤니티 게시판 리스트` `게시판 조회, 글쓰기, 수정, 삭제` `게시판 기능 테스트` `DB`| 
 | <a href="https://github.com/jinvvoo" target='_blank'>진용민</a> | `서버개발`   | `예약기능` `특정 조건에 따른 예약 조회 기능` `예약 페이지` `프론트 엔드 디자인` `My Page` `DB`| 
 
 
